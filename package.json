@@ -1,0 +1,17 @@
+{
+    "name": "form-builder-app",
+    "version": "1.0.0",
+    "description": "A simple form builder web app",
+    "scripts": {
+      "start": "tsc app.ts && tsc form/form.ts",
+      "build": "tsc",
+      "watch": "tsc --watch",
+      "clean": "rm -rf dist"
+    },
+    "author": "Akash Aher",
+    "license": "MIT",
+    "devDependencies": {
+      "typescript": "^5.4.0"
+    }
+  }
+  

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Tech Form Builder</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .form-controls {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button-group button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id='form-builder' class="form-builder hidden">
+            <div class="logo">
+                <img src="https://www.celltech-usa.com/assets/images/celltech-logo-notag-308x96.png" alt="" height="50px" width="100px">
+            </div>
+            <div class="form-controls">
+                <h3>Form Name</h3>
+                <input type="text" id="formTitle" placeholder="Form Title" class="form-title-input"
+                    onchange="changeTitle(this.value)">
+                <div class="button-group">
+                    <button onclick="newQuestion('text')">Add Text Question</button>
+                    <button onclick="newQuestion('choice')">Add Multiple Choice</button>
+                    <button onclick="newQuestion('checkbox')">Add Checkbox</button>
+                </div>
+            </div>
+            <div id="questions-container" class="questions-container">
+            </div>
+            <button onclick="previewForm('')" class="preview-button">Preview Form</button>
+            <div class="form-response-review-header">
+                <button onclick="saveForm()" class="save-button">Save Form</button>
+                <button onclick="publishForm()" class="publish-button">Publish Form</button>
+            </div>
+            <button onclick="location.href='/index.html'" class="preview-button">Back to Home</button>
+        </div>
+
+        <div id="form-preview" class="form-preview hidden">
+            <h2>Form Preview</h2>
+            <div id="preview-container">
+            </div>
+            <button onclick="backToEdit()" class="back-button">Back to Edit</button>
+        </div>
+
+        <div id="form-response" class="form-response hidden">
+            <div class="form-response-review-header">
+                <button onclick="location.href='/index.html'">
+                    <i class="fa fa-home fa-lg"></i>
+                </button>
+                <h1>Form Fill Response</h1>
+            </div>
+            <div id="response-container">
+            </div>
+            <button onclick="submit()" type="submit" class="back-button">Submit Response</button>
+        </div>
+
+        <div id="form-response-review" class="form-response hidden">
+            <div class="form-response-review-header">
+                <button onclick="location.href='/index.html'">
+                    <i class="fa fa-home fa-lg"></i>
+                </button>
+                <h1>Form Response</h1>
+            </div>
+            <div id="response-review-container">
+            </div>
+        </div>
+
+    </div>
+    <script> var exports = {}; </script>
+    <script src="form.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+/* Universal reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.column {
+  width: 32%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: linear-gradient(135deg, #ff4081, #673ab7);
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.new-form-button,
+.edit-form-button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-form-button:hover,
+.edit-form-button:hover {
+  background-color: #1565c0;
+}
+
+.form-option-buttons {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.form-builder,
+.form-preview {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-title-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #eeeeee;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: border-color 0.3s ease;
+}
+
+.form-title-input:focus {
+  border-color: #673ab7;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: darkslateblue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #512da8;
+  transform: translateY(-2px);
+}
+
+.question-block,
+.response-block {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.question-block:hover,
+.response-block:hover {
+  background-color: #e3e3e3;
+}
+
+.question-input,
+.question-answer,
+.option-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.question-input:focus,
+.question-answer:focus,
+.option-input:focus {
+  border-color: #673ab7;
+  outline: none;
+}
+
+.question-type-select {
+  width: 32%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.options-container {
+  margin-top: 10px;
+}
+
+.remove-button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #d32f2f;
+}
+
+.preview-button,
+.save-button,
+.publish-button,
+.back-button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.preview-button {
+  background-color: #673ab7;
+  color: white;
+}
+
+.save-button,
+.publish-button {
+  background-color: #388e3c;
+  color: white;
+}
+
+.save-button:hover,
+.publish-button:hover {
+  background-color: #2e7d32;
+}
+
+.form-preview {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.back-button {
+  background-color: #607d8b;
+  color: white;
+}
+
+.text-overflow-hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.question-block {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 15px 0;
+  background: white;
+  cursor: move;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.controls-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-response-review-header{
+  display: flex;
+  margin: 10px 0;
+  gap: 10px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
